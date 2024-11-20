@@ -26,7 +26,6 @@ router.post("/register", async (req, res) => {
   }
 
   if (isNhanVien === true) {
-    //Tạo tài khoản cho nhân viên
     try {
       let user = await NhanVien.findOne({ sodienthoai });
       if (user) {
@@ -70,7 +69,7 @@ router.post("/register", async (req, res) => {
       res.status(500).send("Server error");
     }
   } else {
-    //Tạo tài khoản cho độc giả
+    //độc giả
     try {
       let user = await DocGia.findOne({ dienthoai });
       if (user) {
